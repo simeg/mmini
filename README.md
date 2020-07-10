@@ -1,2 +1,2 @@
-# minifier-cli
-CLI tool to minify your URLs
+# minifier
+CLI and server to minify your URLs
