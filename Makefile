@@ -1,4 +1,7 @@
-.PHONY: serve start-db lint test fix
+.PHONY: deploy serve start-db lint test fix
+
+deploy:
+	git push heroku master
 
 serve:
 	nodemon --watch . --ext js,html index.js
