@@ -40,7 +40,7 @@ exports.getById = async id => {
 };
 
 exports.init = callback => {
-	client = redis.createClient();
+	client = redis.createClient(process.env.REDIS_URL);
 	client.on("error", err => console.error(err));
 	client.on("end", () => console.warn("Redis client connection lost"));
 	client.on("warning", warn => console.warn(warn));
