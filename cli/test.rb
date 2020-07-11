@@ -49,7 +49,7 @@ class CliTest < Test::Unit::TestCase
     end
 
     actual = test_runner.run([url], post_url_fn)
-    expected = [true, 'http://localhost:3000/some-short-id']
+    expected = [true, 'https://mmini.herokuapp.com/some-short-id']
 
     assert_equal(expected, actual)
   end
