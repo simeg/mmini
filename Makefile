@@ -1,11 +1,16 @@
 .PHONY: ci deploy fix lint serve start-db test
 
 # Is run on CI/CD
-ci: lint test
+ci: deps lint test
 
 # Deploy to production
 deploy:
 	git push heroku master
+
+# Install dependencies
+deps:
+	bundle install --gemfile=cli/Gemfile
+	npm ci
 
 # Fix all linting errors
 fix:
