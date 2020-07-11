@@ -2,7 +2,6 @@
 
 require 'test/unit'
 require 'test/unit/assertions'
-include Test::Unit::Assertions
 
 require_relative './cli'
 
@@ -11,6 +10,8 @@ class TestRunner
 end
 
 class CliTest < Test::Unit::TestCase
+  include Test::Unit::Assertions
+
   def test_is_valid_url__success
     test_runner = TestRunner.new
     url = 'http://www.valid-domain.com'

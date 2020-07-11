@@ -11,9 +11,8 @@ module Cli
   HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port)
 
   def valid_url?(string)
-    #hits = string =~ /\A#{URI::regexp}\z/
     hits = string =~ /\A#{URI::DEFAULT_PARSER.make_regexp}\z/
-    hits == 0
+    !hits.nil? && hits.zero?
   end
 
   def post_url(url)
