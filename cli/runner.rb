@@ -7,5 +7,10 @@ class Runner
 end
 
 runner = Runner.new
-result = runner.run(ARGV, runner.method(:post_url))
-puts result
+success, url = runner.run(ARGV, runner.method(:post_url))
+
+if success
+  puts url
+else
+  exit!
+end
