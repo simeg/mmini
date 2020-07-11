@@ -8,7 +8,7 @@ require 'uri'
 module Cli
   BACKEND_BASE = 'https://mmini.herokuapp.com'.freeze
   BACKEND = URI.parse(BACKEND_BASE + '/minify')
-  HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port=nil)
+  HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port = nil)
 
   def valid_url?(string)
     hits = string =~ /\A#{URI::DEFAULT_PARSER.make_regexp}\z/

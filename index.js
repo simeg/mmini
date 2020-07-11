@@ -42,7 +42,7 @@ const initExpress = () => {
 		if (!url) {
 			res.status(400).send("No matching URL for: " + id);
 		} else {
-		    console.log(`[/:id] - Redirecting from ${id} -> ${url}`);
+			console.log(`[/:id] - Redirecting from ${id} -> ${url}`);
 			res.redirect(url);
 		}
 	});
