@@ -14,17 +14,17 @@ deps:
 
 # Fix all linting errors
 fix:
-	eslint --fix *.js
+	eslint --fix server/*.js
 	rubocop -a cli/*.rb
 
 # Run linters
 lint:
-	eslint *.js
-	rubocop cli/*.rb
+	eslint server/**/*.js
+	rubocop cli/**/*.rb
 
 # Start node server
 serve:
-	nodemon --watch . --ext js,html index.js
+	nodemon --watch server --ext js server/index.js
 
 # Start redis instance
 start-db:
