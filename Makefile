@@ -18,12 +18,12 @@ deps:
 # Fix all linting errors
 fix:
 	eslint --fix server/*.js
-	rubocop -a cli/*.rb
+	rubocop -a cli/*.rb cli/mmini.gemspec
 
 # Run linters
 lint:
 	eslint server/**/*.js
-	rubocop cli/**/*.rb
+	rubocop cli/*.rb cli/mmini.gemspec
 
 # Start node server
 serve:
