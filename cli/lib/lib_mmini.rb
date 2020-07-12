@@ -5,7 +5,7 @@ require 'json'
 require 'net/http'
 require 'uri'
 
-module Cli
+module LibMmini
   BACKEND_BASE = 'https://mmini.herokuapp.com'.freeze
   BACKEND = URI.parse(BACKEND_BASE + '/minify')
   HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port = nil)

@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require_relative './../lib/lib_mmini'
+
+class Mmini
+  include LibMmini
+end
+
+mmini = Mmini.new
+success, url = mmini.run(ARGV, mmini.method(:post_url))
+
+if success
+  puts url
+else
+  exit!
+end

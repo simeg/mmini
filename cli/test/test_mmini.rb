@@ -3,10 +3,10 @@
 require 'test/unit'
 require 'test/unit/assertions'
 
-require_relative './cli'
+require_relative './../lib/ini_lib'
 
 class TestRunner
-  include Cli
+  include LibMmini
 end
 
 class CliTest < Test::Unit::TestCase
