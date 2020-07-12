@@ -1,4 +1,4 @@
-# minifier [![Build Status][build_badge]][build_status]
+# minifier [![Version][gem_badge]][gem_url] [![Build Status][build_badge]][build_status]
 CLI tool and server to minify your URLs.
 
 ## Example
@@ -21,3 +21,5 @@ Ruby location. To work around this you have a couple of alternatives.
 
 [build_badge]: https://travis-ci.org/simeg/minifier.svg?branch=master
 [build_status]: https://travis-ci.org/simeg/minifier
+[gem_badge]: https://img.shields.io/gem/v/mmini.svg
+[gem_url]: https://rubygems.org/gems/mmini
