@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "mmini"
-  spec.version = "1.0.0"
+  spec.version = "1.1.0"
   spec.authors = ["Simon Egersand"]
 
   spec.summary = "CLI client for minifier server"

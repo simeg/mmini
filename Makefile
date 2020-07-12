@@ -1,11 +1,14 @@
-.PHONY: ci deploy fix lint serve start-db test
+.PHONY: ci deploy-server deploy-gem fix lint serve start-db test
 
 # Is run on CI/CD
 ci: deps lint test
 
-# Deploy to production
-deploy:
+# Deploy server to production
+deploy-server:
 	git push heroku master
+
+deploy-gem:
+	./scripts/deploy_gem
 
 # Install dependencies
 deps:

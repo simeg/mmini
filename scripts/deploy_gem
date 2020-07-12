@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Build and deploy latest version of gem "mmini"
+# This script must be executed from the repo root
+#
+# Requires "parse-gemspec-cli" to be installed
+#
+# Usage:
+#
+#   ./scripts/deploy_gem
+#
+
+# Exit on error
+set -e
+
+readonly gem_version=$(parse-gemspec-cli cli/mmini.gemspec | jq .version | tr -d '"')
+readonly gem_file="mmini-${gem_version}.gem"
+
+echo "Building gem.."
+gem build cli/mmini.gemspec
+echo "Gem built!"
+
+echo "Deploying gem.."
+gem push cli/${gem_file}
+echo "Gem deployed!"
+
