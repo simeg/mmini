@@ -8,6 +8,10 @@ require 'ostruct'
 require 'rubygems'
 require 'uri'
 
+module LibVersion
+  VERSION = '1.1.2'.freeze
+end
+
 module LibMmini
   BACKEND_BASE = 'https://mmini.herokuapp.com'.freeze
   BACKEND = URI.parse(BACKEND_BASE + '/minify')
@@ -19,8 +23,7 @@ module LibMmini
 
     OptionParser.new do |opts|
       opts.on_tail('-v', '--version', 'Show version') do
-        spec = Gem::Specification.load('mmini.gemspec')
-        puts spec.version
+        puts LibVersion::VERSION
         exit
       end
     end.parse!

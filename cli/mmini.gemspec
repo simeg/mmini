@@ -1,13 +1,15 @@
+require_relative 'lib/lib_mmini'
+
 Gem::Specification.new do |spec|
   spec.name = 'mmini'
-  spec.version = '1.1.1'
+  spec.version = LibVersion::VERSION
   spec.authors = ['Simon Egersand']
 
   spec.summary = 'CLI client for minifier server'
   spec.homepage = 'https://github.com/simeg/minifier'
   spec.license = 'MIT'
 
-  spec.files = %w[lib/lib_mmini.rb mmini.gemspec]
+  spec.files = %w[lib/lib_mmini.rb]
   spec.require_paths = ['lib']
   spec.executables << 'mmini'
 
