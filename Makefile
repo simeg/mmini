@@ -32,4 +32,4 @@ start-db:
 
 # Run tests
 test:
-	ruby cli/test.rb
+	ruby cli/test/test_mmini.rb

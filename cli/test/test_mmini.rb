@@ -3,7 +3,7 @@
 require 'test/unit'
 require 'test/unit/assertions'
 
-require_relative './../lib/ini_lib'
+require_relative './../lib/lib_mmini'
 
 class TestRunner
   include LibMmini
