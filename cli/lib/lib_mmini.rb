@@ -3,12 +3,37 @@
 require 'cgi'
 require 'json'
 require 'net/http'
+require 'optparse'
+require 'ostruct'
+require 'rubygems'
 require 'uri'
 
 module LibMmini
   BACKEND_BASE = 'https://mmini.herokuapp.com'.freeze
   BACKEND = URI.parse(BACKEND_BASE + '/minify')
   HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port = nil)
+
+  def parse_args(argv)
+    options = OpenStruct.new
+    options.url = nil
+
+    OptionParser.new do |opts|
+      opts.on_tail('-v', '--version', 'Show version') do
+        spec = Gem::Specification.load('mmini.gemspec')
+        puts spec.version
+        exit
+      end
+    end.parse!
+
+    if argv.length != 1
+      puts 'Only single argument supported'
+      exit
+    end
+
+    options[:url] = argv.first
+    options.freeze
+    options
+  end
 
   def valid_url?(string)
     hits = string =~ /\A#{URI::DEFAULT_PARSER.make_regexp}\z/
@@ -28,12 +53,8 @@ module LibMmini
   end
 
   def run(argv, post_url_fn)
-    if argv.length != 1
-      puts 'Only single argument supported'
-      exit!
-    end
-
-    url = argv.first
+    args = parse_args(argv)
+    url = args.url
 
     unless valid_url?(url)
       puts 'URL is invalid: ' + url
