@@ -1,4 +1,4 @@
-# minifier [![Version][gem_badge]][gem_url] [![Build Status][build_badge]][build_status]
+# mmini [![Version][gem_badge]][gem_url] [![Build Status][build_badge]][build_status]
 CLI tool and server to minify your URLs.
 
 ## Example
@@ -19,7 +19,7 @@ Ruby location. To work around this you have a couple of alternatives.
 2) Use a Ruby version manager such as [`rbenv`](https://github.com/rbenv/rbenv). If you're writing Ruby code it's probably a good idea
    to use `rbenv` anyway.
 
-[build_badge]: https://travis-ci.org/simeg/minifier.svg?branch=master
-[build_status]: https://travis-ci.org/simeg/minifier
+[build_badge]: https://travis-ci.org/simeg/mmini.svg?branch=master
+[build_status]: https://travis-ci.org/simeg/mmini
 [gem_badge]: https://img.shields.io/gem/v/mmini.svg
 [gem_url]: https://rubygems.org/gems/mmini
