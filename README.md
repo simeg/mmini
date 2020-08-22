@@ -11,7 +11,13 @@ https://mmini.herokuapp.com/g5ORz_63J
 Install `mmini` using `gem`. If you're on macOS you're not allowed to install gems to the shared
 Ruby location. To work around this you have a couple of alternatives.
 
-1) Install the gem locally to your user. This is what I recommend unless you're a Ruby developer.
+1) Install the gem using Homebrew. To install gems with Homebrew you first need to install `brew-gem`.
+   ```sh
+   brew install brew-gem
+   brew gem install mmini
+   ```
+
+2) Install the gem locally to your user.
     ```sh
     gem install mmini --user-install
     ```
