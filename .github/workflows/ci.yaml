@@ -1,0 +1,29 @@
+name: CI
+
+on: push
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Lint NodeJS
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+    - run: npm ci
+    - run: yarn run eslint server/**/*.js
+
+    - name: Lint Ruby
+      uses: luizfonseca/github-actions-rubocop@1.5.5
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Test Ruby
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+    - run: ruby cli/test/test_mmini.rb
