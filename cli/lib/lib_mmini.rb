@@ -14,7 +14,7 @@ end
 
 module LibMmini
   BACKEND_BASE = 'https://mmini.herokuapp.com'.freeze
-  BACKEND = URI.parse(BACKEND_BASE + '/minify')
+  BACKEND = URI.parse("#{BACKEND_BASE}/minify")
   HTTP = Net::HTTP.new(BACKEND.host, BACKEND.port = nil)
 
   def parse_args(argv)
@@ -60,7 +60,7 @@ module LibMmini
     url = args.url
 
     unless valid_url?(url)
-      puts 'URL is invalid: ' + url
+      puts 'URL is invalid: #${url}'
       exit!
     end
 
@@ -69,7 +69,7 @@ module LibMmini
     if response.code == '200'
       id = response.body
       success = true
-      [success, BACKEND_BASE.to_s + '/' + id]
+      [success, "#{BACKEND_BASE}/#{id}"]
     else
       success = false
       [success, '']
