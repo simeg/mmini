@@ -8,7 +8,7 @@ deploy-server:
 	git push heroku master
 
 deploy-gem:
-	./scripts/deploy_gem
+	pushd cli && ./../scripts/deploy_gem; popd
 
 # Install dependencies
 deps:
